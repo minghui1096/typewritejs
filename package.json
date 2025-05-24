@@ -6,9 +6,9 @@
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "keywords": [
-    "typewrite",
-    "typewritejs",
     "typewrite-simple",
+    "typewritejs",
+    "typewrite",
     "typewrite effect"
   ],
   "files": [
