@@ -2,25 +2,25 @@
 
 ![](preview.gif)
 
-[NPM Repository](https://npmjs.org/typewrite)
+[NPM Repository](https://npmjs.org/typewrite-simple)
 
 ## Installation
 You can install Typewritejs with just one command and you're good to go
 ```shell
 
 # with npm
-npm i typewritejs
+npm i typewrite-simple
 
 # with yarn
-yarn add typewritejs
+yarn add typewrite-simple
 
 # with pnpm
-pnpm add typewritejs
+pnpm add typewrite-simple
 
 ```
 
 ```js
-import Typewrite from 'typewritejs';
+import Typewrite from 'typewrite-simple';
 
 new Typewrite('#typewrite', {
   strings: ['Hello', 'World'],
