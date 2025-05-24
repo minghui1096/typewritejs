@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Example - Chat bot</title>
+  </head>
+  <body>
+    <div id="typewrite"></div>
+
+    <script src="../../dist/index.umd.js"></script>
+    <script type="text/javascript">
+      const typewrite = new Typewrite('#typewrite', {
+        loop: true
+      })
+
+      typewrite
+        .typeString('<strong>Human: </strong>')
+        .typeString('Hello how are you?')
+        .pauseFor(2500)
+        .typeString('<br/>')
+        .typeString('<strong>Bot: </strong>')
+        .typeString('I am fine thanks, how are you?')
+        .pauseFor(2500)
+        .typeString('<br/>')
+        .typeString('<strong>Human: </strong> ')
+        .typeString('I am great!')
+        .pauseFor(2500)
+        .start()
+    </script>
+  </body>
+</html>

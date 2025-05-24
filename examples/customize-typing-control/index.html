@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Example - Customize Typing Control</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src="../../dist/index.umd.js"></script>
+    <script type="text/javascript">
+      const app = document.getElementById('app')
+      let recordStr = ''
+      const typewrite = new Typewrite('', {
+        delay: 50,
+        onStep: (currentEvent) => {
+          const character = currentEvent.eventArgs.character
+          const eventName = currentEvent.eventName
+          if (eventName === 'TYPE_CHARACTER' && character) {
+            recordStr += character
+            app.innerHTML = recordStr
+          }
+        }
+      })
+      typewrite.typeCharacters([...'this is customize typing control']).start()
+      setTimeout(() => {
+        typewrite.stop().clearEventQueue()
+        recordStr = ''
+        app.innerHTML = ''
+      }, 1000)
+      setTimeout(() => {
+        typewrite.typeCharacters([...'clear the queue']).start()
+      }, 1500)
+    </script>
+  </body>
+</html>
