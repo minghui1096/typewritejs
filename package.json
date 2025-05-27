@@ -1,7 +1,8 @@
 {
   "name": "typewrite-simple",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
+  "homepage": "https://github.com/minghui1096/typewritejs",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",

@@ -2,21 +2,19 @@
 
 ![](preview.gif)
 
-[NPM Repository](https://npmjs.org/typewrite-simple)
+[NPM 仓库链接](https://npmjs.org/typewrite-simple)
 
-## Installation
-You can install Typewritejs with just one command and you're good to go
+## 安装
+
 ```shell
-
-# with npm
+# 使用 npm
 npm i typewrite-simple
 
-# with yarn
+# 使用 yarn
 yarn add typewrite-simple
 
-# with pnpm
+# 使用 pnpm
 pnpm add typewrite-simple
-
 ```
 
 ```js
@@ -28,47 +26,47 @@ new Typewrite('#typewrite', {
 });
 ```
 
-## Options
+## 配置项（Options）
 
-| Name | Type | Default value | Description |
+| 名称 | 类型 | 默认值 | 描述 |
 | --- | --- | --- | --- |
-| strings | String or Array | null | Strings to type out when using ``autoStart`` option |
-| cursor | String | Pipe character | String value to use as the cursor. |
-| delay | 'natural' or Number | 'natural' | The delay between each key when typing. |
-| deleteSpeed | 'natural' or Number | 'natural' | The delay between deleting each character. |
-| loop | Boolean | false | Whether to keep looping or not. |
-| autoStart | Boolean | false | Whether to autostart typing strings or not. You are required to provide ``strings`` option. |
-| pauseFor | Number | 1500 | The pause duration after a string is typed when using autostart mode |
-| devMode | Boolean | false | Whether or not to display console logs. |
-| skipAddStyles | Boolean | Skip adding default typewrite css styles. |
-| wrapperClassName | String | 'Typewrite__wrapper' | Class name for the wrapper element. |
-| cursorClassName | String | 'Typewrite__cursor' | Class name for the cursor element. |
-| stringSplitter | Function | String splitter function |
-| onCreateTextNode | Function | null | Callback function to replace the internal method which creates a text node for the character before adding it to the DOM. If you return null, then it will not add anything to the DOM and so it is up to you to handle it. |
-| onRemoveNode | Function | null | Callback function when a node is about to be removed. First param will be an object `{ node: HTMLNode, charater: string }` |
-| onStep | Function | null | Callback function when step pop queue. First param will be an object `{ eventName: IEventName, eventArgs: IEventArgs }` |
+| strings | String \| Array | null | 在使用 ``autoStart`` 选项时需要提供要打字显示的字符串 |
+| cursor | String | 竖线字符 | 显示光标的字符 |
+| delay | 'natural' \| Number | 'natural' | 打字时每个字符之间的延迟时间 |
+| deleteSpeed | 'natural' \| Number | 'natural' | 删除字符时的延迟时间 |
+| loop | Boolean | false | 是否循环播放 |
+| autoStart | Boolean | false | 是否自动开始打字。需要提供 ``strings`` 配置项 |
+| pauseFor | Number | 1500 | 自动模式下，字符串输入完成后的暂停时间 |
+| devMode | Boolean | false | 是否在控制台输出日志 |
+| skipAddStyles | Boolean | false | 是否跳过添加默认的 CSS 样式 |
+| wrapperClassName | String | 'Typewrite__wrapper' | 包裹元素的类名 |
+| cursorClassName | String | 'Typewrite__cursor' | 光标元素的类名 |
+| stringSplitter | Function | null | 字符串拆分函数 |
+| onCreateTextNode | Function | null | 创建文本节点的回调函数。如果你返回 null，则不会将节点添加到 DOM 中，你需要自己处理 |
+| onRemoveNode | Function | null | 当某个节点即将被移除时触发的回调函数。第一个参数是 `{ node: HTMLNode, charater: string }` |
+| onStep | Function | null | 步骤执行时触发的回调函数。第一个参数是 `{ eventName: IEventName, eventArgs: IEventArgs }` |
 
-## Methods
+## 方法（Methods）
 
-All methods can be chained together.
+所有方法都可以链式调用。
 
-| Name | Params | Description |
+| 名称 | 参数 | 描述 |
 | --- | --- | --- |
-| start | - | Start the typewrite effect. |
-| stop | - | Stop the typewrite effect. |
-| pauseFor | ``ms`` Time to pause for in milliseconds | Pause for milliseconds |
-| typeString | ``string`` String to type out, it can contain HTML tags | Type out a string using the typewrite effect. |
-| pasteString | ``string`` String to paste out, it can contain HTML tags | Paste out a string. |
-| deleteAll | ``speed`` Speed to delete all visibles nodes, can be number or 'natural' | Delete everything that is visible inside of the typewrite wrapper element. |
-| deleteChars | ``amount`` Number of characters | Delete and amount of characters, starting at the end of the visible string. |
-| callFunction | ``cb`` Callback, ``thisArg`` this Object to bind to the callback function | Call a callback function. The first parameter to the callback ``elements`` which contains all DOM nodes used in the typewrite effect. |
-| changeDeleteSpeed | ``speed`` Number or 'natural' | The speed at which to delete the characters, lower number is faster. |
-| changeDelay | ``delay`` Number or 'natural' | Change the delay when typing out each character |
-| clearEventQueue | - | cleaer the eventQueue  |
+| start | - | 开始打字效果 |
+| stop | - | 停止打字效果 |
+| pauseFor | ``ms`` 暂停时间（毫秒） | 暂停指定时间 |
+| typeString | ``string`` 要打字显示的字符串，可以包含 HTML 标签 | 以打字效果显示字符串 |
+| pasteString | ``string`` 要粘贴显示的字符串，可以包含 HTML 标签 | 直接显示字符串 |
+| deleteAll | ``speed`` 删除速度，可以是数字或 'natural' | 删除容器内所有可见的内容 |
+| deleteChars | ``amount`` 要删除的字符数 | 从末尾开始删除指定数量的字符 |
+| callFunction | ``cb`` 回调函数，``thisArg`` 绑定 this 的对象 | 调用回调函数。回调的第一个参数是包含所有 DOM 节点的对象 |
+| changeDeleteSpeed | ``speed`` 删除速度，可以是数字或 'natural' | 改变删除字符的速度，数值越小越快 |
+| changeDelay | ``delay`` 延迟时间，可以是数字或 'natural' | 改变每个字符输入的延迟时间 |
+| clearEventQueue | - | 清空事件队列 |
 
-## Examples
+## 示例（Examples）
 
-### Basic example
+### 基础示例
 
 ```js
 var app = document.getElementById('app');
@@ -89,7 +87,7 @@ typewrite
   .start();
 ```
 
-### Custom text node creator using callback
+### 自定义文本节点创建器
 
 ```js
 var app = document.getElementById('app');
@@ -110,7 +108,7 @@ typewrite
   .start();
 ```
 
-### Customize typing control using onStep
+### 使用 `onStep` 控制打字过程
 
 ```js
 const app = document.getElementById('app')
@@ -137,22 +135,22 @@ setTimeout(() => {
 }, 1500)
 ```
 
-### Custom handling text insert using input placeholder
+### 自定义文本插入：输入框占位符示例
 
 ```js
 var input = document.getElementById('input')
 
 var customNodeCreator = function(character) {
-  // Add character to input placeholder
+  // 添加字符到输入框的 placeholder
   input.placeholder = input.placeholder + character;
 
-  // Return null to skip internal adding of dom node
+  // 返回 null 表示不进行内部 DOM 节点添加
   return null;
 }
 
 var onRemoveNode = function({ character }) {
   if(input.placeholder) {
-    // Remove last character from input placeholder
+    // 移除占位符中的最后一个字符
     input.placeholder = input.placeholder.slice(0, -1)
   }
 }
@@ -169,4 +167,3 @@ typewrite
   .pauseFor(300)
   .start();
 ```
-
